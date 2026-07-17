@@ -1,0 +1,5 @@
+## Core dotnet build and NuGet outputs
+bin/
+obj/
+*.suo
+*.user
