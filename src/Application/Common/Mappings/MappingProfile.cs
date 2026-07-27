@@ -14,6 +14,8 @@ public class MappingProfile : Profile
                 src.WorkedHours.HasValue
                     ? $"{(int)src.WorkedHours.Value.TotalHours}h {src.WorkedHours.Value.Minutes}m"
                     : null));
+
+        CreateMap<Product, ProductDto>();
     }
 
 
