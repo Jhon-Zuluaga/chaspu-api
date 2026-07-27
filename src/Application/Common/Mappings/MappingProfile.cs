@@ -16,6 +16,12 @@ public class MappingProfile : Profile
                     : null));
 
         CreateMap<Product, ProductDto>();
+
+        CreateMap<StockMovement, StockMovementDto>()
+            .ForMember(dest => dest.ProductName, opt => opt.MapFrom(src => src.Product.Name))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name))
+            .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.Type.ToString()));
+
     }
 
 
