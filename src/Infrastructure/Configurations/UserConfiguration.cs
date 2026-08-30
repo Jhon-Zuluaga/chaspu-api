@@ -28,5 +28,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .HasConversion<string>()
             .HasMaxLength(20)
             .IsRequired();
+
+        builder.Property(u => u.WeeklySalary)
+            .HasColumnType("decimal(10,2)");
     }
 }

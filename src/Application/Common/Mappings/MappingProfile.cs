@@ -25,6 +25,10 @@ public class MappingProfile : Profile
         CreateMap<CashRegister, CashRegisterDto>()
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name))
             .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status.ToString()));
+
+        CreateMap<User, UserDto>()
+    .ForMember(dest => dest.Role, opt => opt.MapFrom(src => src.Role.ToString()))
+    .ForMember(dest => dest.WeeklySalary, opt => opt.MapFrom(src => src.WeeklySalary));
     }
 
 

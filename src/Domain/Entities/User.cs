@@ -5,6 +5,7 @@ public class User : BaseEntity
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
     public UserRole Role { get; set; }
+    public decimal? WeeklySalary { get; set;}
 
     // Navigation Properties
     public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
