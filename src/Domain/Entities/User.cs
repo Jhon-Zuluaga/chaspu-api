@@ -5,11 +5,14 @@ public class User : BaseEntity
     public string Email { get; set; } = string.Empty;
     public string PasswordHash { get; set; } = string.Empty;
     public UserRole Role { get; set; }
-    public decimal? WeeklySalary { get; set;}
+    public decimal? WeeklySalary { get; set; }
 
     // Navigation Properties
     public ICollection<Attendance> Attendances { get; set; } = new List<Attendance>();
     public ICollection<CashRegister> CashRegistersOpened { get; set; } = new List<CashRegister>();
     public ICollection<Sale> Sales { get; set; } = new List<Sale>();
     public ICollection<StockMovement> StockMovements { get; set; } = new List<StockMovement>();
+
+    public ICollection<WeeklyClosing> WeeklyClosingsMade { get; set; } = new List<WeeklyClosing>();
+    public ICollection<WeeklyClosingPayroll> weeklyClosingPayrolls { get; set; } = new List<WeeklyClosingPayroll>();
 }
